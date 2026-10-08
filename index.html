@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BIOPULSE · Aqua Vita · Future Fest</title>
+<meta name="description" content="BIOPULSE — protótipo e experiência interativa do grupo Aqua Vita sobre algas, poluição e as consequências de soluções ambientais aceleradas. Projeto do Future Fest, FIAP SCHOOL.">
+<meta name="theme-color" content="#070b09">
+<meta property="og:title" content="BIOPULSE · Aqua Vita">
+<meta property="og:description" content="Um biorreator, uma IA e uma decisão: o que acontece quando a tecnologia ambiental anda mais rápido que o equilíbrio do planeta.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23070b09'/%3E%3Ccircle cx='50' cy='58' r='16' fill='%234ce88a'/%3E%3Cpath d='M50 20v24M36 40q14-10 28 0' stroke='%234ce88a' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-p="ok">
+<div class="top-progress" aria-hidden="true"></div>
+<div class="boot-sequence" id="boot" aria-hidden="true"><div class="boot-card"><small>Inicializando sistema de bio-resposta</small><b>BIOPULSE / 01</b><div class="boot-line"><i></i></div><small style="margin-top:12px">Conectando reator · IA · ecossistema</small></div></div>
+<aside class="mission-dock" aria-hidden="true"><span>MISSÃO · EQUILÍBRIO</span><i></i></aside>
+<!-- ## MARCA D'ÁGUA: crédito visual permanente da equipe responsável pelo projeto. -->
+<aside class="team-watermark" aria-label="Créditos da equipe Aqua Vita"><b>Aqua Vita · Grupo criador</b><span>Davi Rodrigues · Lucas Gois · Pedro Mony · Felipe de Moraes</span><span>Kauan Matos · Enzo Zezze · Matheus Ortenzi</span></aside>
+<canvas id="fx"></canvas><div id="wipe"></div><div id="toast" role="status"></div>
+<div id="crt" aria-hidden="true"><div class="crt-roll"></div></div>
+<div id="alert"><div class="drip"></div><h2>INTERVENÇÃO DETECTADA</h2></div>
+
+<div class="annbar">
+  <div class="acode" aria-hidden="true"><span id="acL"></span></div>
+  <div class="anntext">Apresentação ao vivo · Future Fest <span class="adot">•</span> <a href="#prototipo">Ver o protótipo <i>↗</i></a></div>
+  <div class="acode" aria-hidden="true"><span id="acR"></span></div>
+</div>
+<!-- ## ESTRUTURA HTML: cabeçalho fixo com a marca e atalhos de navegação -->
+<header>
+  <div><h1>BIOPULSE</h1><small>Aqua Vita · Future Fest · FIAP SCHOOL</small></div>
+  <nav><button class="btn nb" data-t="ia"><i>01</i>IA</button><button class="btn nb" data-t="jogo"><i>02</i>JOGO</button><button class="btn nb" data-t="design"><i>03</i>DESIGN</button><button class="btn nb" data-t="conquistas"><i>04</i>CONQUISTAS</button></nav>
+</header>
+
+<!-- ## CONTEÚDO PRINCIPAL: cada seção abaixo explica uma parte da narrativa -->
+<main>
+<!-- ## 01. HERO: apresenta o desafio e dá acesso ao reator -->
+<section id="hero">
+  <div class="herogrid">
+    <div class="herocopy">
+      <span class="kicker">// Aqua Vita · Future Fest · FIAP SCHOOL</span>
+      <h1 class="claim">Um biorreator, uma IA<br>e uma decisão.</h1>
+      <p class="lede">BIOPULSE simula o que acontece quando a tecnologia ambiental anda mais rápido do que o equilíbrio que ela promete proteger. Ligue o reator para começar.</p>
+      <button class="btn big" id="power">LIGAR O REATOR</button>
+      <div class="readout">
+        <div><small>Observação</small><b id="nB">SEM LEITURA</b></div>
+        <div><small>Circulação</small><b id="nF">PARADO</b></div>
+        <div><small>Temperatura</small><b id="nT">EM ESPERA</b></div>
+        <div><small>O₂ / CO₂</small><b><span id="nO">--</span> / <span id="nC">--</span></b></div>
+      </div>
+    </div>
+    <div class="rwrap"><div id="rmain"></div><div class="pstat" id="pstat">PLANETA SAUDÁVEL</div></div>
+  </div>
+  <div class="cards">
+    <div class="panel feat" data-t="ia"><h3>IA</h3><p>Uma leitura constante dos dados do reator — e do que eles deixam de dizer.</p></div>
+    <div class="panel" data-t="jogo"><h3>Jogo Biofilito</h3><p>Suas decisões alteram o estado do planeta.</p></div>
+    <div class="panel"><h3>Experiência</h3><p>Observe. Decida. Intervenha.</p></div>
+  </div>
+</section>
+<div class="codeband"></div>
+
+<!-- ## 02. IA: explica o dilema ambiental e o documento fictício LexCorp -->
+<section id="ia">
+  <div class="sec-h"><span>01</span><h2>IA // Futuro</h2></div>
+  <p class="lead rv">“Algas não são apenas organismos. Elas podem funcionar como pequenas fábricas biológicas, produzindo oxigênio e participando da captura de carbono. O problema começa quando a velocidade da solução passa a ser mais importante que o equilíbrio do sistema.”</p>
+  <div class="grid4">
+    <div class="panel rv"><b>ANÁLISE</b><p>Em equilíbrio, algas produzem oxigênio e participam da captura de carbono. O sistema se regula sozinho.</p></div>
+    <div class="panel rv"><b>RISCO</b><p>Quando a pressa vence o equilíbrio, a solução vira o próximo problema.</p></div>
+    <div class="panel rv"><b>POSSIBILIDADE</b><p>Algas nativas, com crescimento gradual, podem apoiar a recuperação de rios e mares.</p></div>
+    <div class="panel rv"><b>CONSEQUÊNCIA</b><p>Uma intervenção acelerada dá resultado imediato e pode criar um novo desequilíbrio.</p></div>
+  </div>
+  <button class="btn big warn" id="intv">INTERVENÇÃO · DESAFIO DAS METAS</button>
+
+  <div class="lexfile rv">
+    <div class="lexhead"><span class="lexmark">⬡</span><div><b>LEXCORP</b><small>Technology Division · Arquivo restrito</small></div></div>
+    <button class="btn warn" id="lexBtn">ACESSAR ARQUIVOS LEXCORP</button>
+    <div class="lexbody" id="lexBody" hidden>
+      <p><i>[CLASSIFICAÇÃO: NÍVEL 3 — ACESSO LIBERADO]</i></p>
+      <p>A LexCorp financia soluções de recuperação ambiental em escala industrial. Documentos internos sugerem que o programa de "super-algas" foi acelerado antes da conclusão dos testes de impacto — priorizando resultado visível sobre segurança do ecossistema.</p>
+      <p>BIOPULSE nasceu dessa pergunta: até onde a tecnologia deve ir para resolver um problema ambiental — e quem decide onde está esse limite?</p>
+      <p class="lexfoot">Documento fictício, parte da narrativa do projeto BIOPULSE. Qualquer semelhança com universos de ficção é intencional e com fins pedagógicos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ## 03. JOGO: contém o game BioPulse e a simulação de decisões -->
+<section id="jogo">
+  <div class="sec-h"><span>02</span><h2>Jogo Biofilito</h2></div>
+  <div class="gtabs"><button class="btn on" data-g="bp">BioPulse · Jogo</button><button class="btn" data-g="sim">Simulação · VilãoIA</button></div>
+  <div class="vexp"><b>// POR QUE EXISTE O BOTÃO VILÃOIA?</b>
+    <p class="voff">A VilãoIA representa <strong style="color:var(--neon)">tecnologia sem ética</strong>: buscar resultado rápido e ignorar a consequência ambiental. O botão liga essa presença no jogo para você comparar: a mesma tecnologia, com e sem cuidado, leva a finais diferentes. Jogue uma vez com ela desligada e outra com ela ligada.</p>
+    <p class="von"><strong style="color:#ff8a97">ATIVA.</strong> As boas decisões valem menos (60%), as ruins pesam mais (140%), cada escolha custa energia e sabotagens aparecem: super-algas, descarte ilegal, falha na rede, sobrecarga do reator e crescimento descontrolado. Não é um vilão de desenho: é o que acontece quando a pressa vence o equilíbrio.</p></div>
+  <!-- BioPulse: jogo em JavaScript puro, embutido no script abaixo (biopulse.js). -->
+  <div id="bp" class="game">
+    <div class="frame" id="bpmount"></div>
+    <div class="bpbar"><small>Clique no jogo · A/D ou setas: socos · W: golpe para cima · S: bolha · P: pausa · M: som</small><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn switch" id="bpvil" title="Liga a tecnologia sem ética: resultado rápido, consequência ignorada" aria-pressed="false">VILÃOIA // OFF</button><button class="btn" id="bpfs">TELA CHEIA</button></div></div>
+    <div class="scorebox" id="bpScore" hidden><p id="bpScoreMsg"></p><div class="scorerow"><input id="bpName" maxlength="18" placeholder="Seu nome" autocomplete="off"><button class="btn" id="bpSaveScore">Salvar pontuação</button></div><small id="bpSaveMsg"></small></div>
+  </div>
+  <!-- Simulação do site. Use BIOPULSE.setPlanet('ok'|'risk'|'bad') para o reator reagir. -->
+  <div id="game-mount" class="game" hidden>
+    <div class="gtop"><button class="btn switch" id="vil" title="Liga a tecnologia sem ética: resultado rápido, consequência ignorada" aria-pressed="false">VILÃOIA // OFF</button><small id="turn">EVENTO 01/06</small></div>
+    <div class="ggrid">
+      <div>
+        <div class="scwrap" id="scene">
+          <svg class="sc" viewBox="0 0 400 220" aria-label="Cenário">
+            <rect class="sky" width="400" height="130"/><circle class="sun" cx="60" cy="40" r="18"/>
+            <g class="smoke"><circle cx="300" cy="70" r="14"/><circle cx="316" cy="48" r="18"/><circle cx="338" cy="28" r="22"/></g>
+            <g class="fac"><rect x="270" y="100" width="90" height="30"/><rect x="290" y="72" width="12" height="30"/><rect x="322" y="82" width="12" height="20"/></g>
+            <rect class="ground" y="128" width="400" height="10"/>
+            <path class="water" d="M0 138H400V220H0z"/>
+            <g class="algaeb"><circle cx="50" cy="170" r="9"/><circle cx="120" cy="190" r="12"/><circle cx="200" cy="165" r="8"/><circle cx="260" cy="195" r="14"/><circle cx="330" cy="172" r="10"/><circle cx="160" cy="150" r="6"/><circle cx="370" cy="200" r="9"/></g>
+            <g class="veg"><rect x="14" y="108" width="4" height="22"/><circle cx="16" cy="102" r="12"/><rect x="60" y="112" width="4" height="18"/><circle cx="62" cy="106" r="10"/><rect x="104" y="106" width="4" height="24"/><circle cx="106" cy="98" r="13"/></g>
+          </svg>
+          <div id="rmini"></div>
+        </div>
+        <div class="inds" id="inds"></div>
+      </div>
+      <div class="evt panel" id="evt"></div>
+    </div>
+    <div class="vmsg" id="vmsg" hidden></div>
+    <div class="log" id="log"></div>
+    <div class="end" id="end" hidden><h3 id="eT"></h3><p id="eM"></p><div class="scorerow"><input id="simName" maxlength="18" placeholder="Seu nome" autocomplete="off"><button class="btn" id="simSaveScore">Salvar pontuação</button></div><small id="simSaveMsg"></small><div><button class="btn big" id="retry">TENTAR NOVAMENTE</button></div></div>
+  </div>
+</section>
+<div class="codeband rev"></div>
+
+<!-- ## 04. COMPARATIVO: contrapõe super-algas e algas nativas -->
+<section id="design">
+  <div class="sec-h"><span>03</span><h2>A diferença</h2></div>
+  <div class="duo">
+    <div class="a rv"><h3>Injeção de super-algas</h3><div id="rA"></div>
+      <ul><li>Cresce rapidamente.</li><li>Produz um efeito imediato.</li><li>Pode desequilibrar o ecossistema.</li></ul>
+      <div class="mt"><small>Velocidade</small><div class="bar"><i style="--w:95%"></i></div></div><div class="mt"><small>Equilíbrio</small><div class="bar"><i style="--w:18%"></i></div></div></div>
+    <div class="b rv"><h3>Algas nativas</h3><div id="rB"></div>
+      <ul><li>Crescimento gradual.</li><li>Restauração mais lenta.</li><li>Maior equilíbrio com o ambiente.</li></ul>
+      <div class="mt"><small>Velocidade</small><div class="bar"><i style="--w:38%"></i></div></div><div class="mt"><small>Equilíbrio</small><div class="bar"><i style="--w:88%"></i></div></div></div>
+  </div>
+  <div class="sci">
+    <div class="panel"><b>SUPER-ALGA</b><p>Crescimento acelerado → resultado rápido → risco de desequilíbrio.</p></div>
+    <div class="panel"><b>ALGA NATIVA</b><p>Crescimento gradual → resultado mais lento → maior possibilidade de equilíbrio sustentável.</p></div>
+  </div>
+  <p class="note2">A “super-alga” é uma metáfora/hipótese narrativa do projeto para representar uma solução tecnológica acelerada e potencialmente perigosa. Não é apresentada como fato científico.</p>
+  <div class="envs"><div><div id="eA"></div><h3 style="color:var(--warn)">CENÁRIO A · INVASÃO</h3><small>Proliferação descontrolada, água alterada</small></div><div><div id="eB"></div><h3 style="color:var(--neon)">CENÁRIO B · CONVIVÊNCIA</h3><small>Algas nativas ajudando na recuperação</small></div></div>
+</section>
+
+<div class="codeband rev"></div>
+
+<!-- ## 05. RECORTES: fontes reais que sustentam a proposta pedagógica -->
+<section id="recortes">
+  <div class="sec-h"><span>//</span><h2>Recortes reais</h2></div>
+  <p class="lead rv">Notícias e estudos de verdade que sustentam as ideias do projeto — do rio sujo de plástico à pergunta sobre algas "turbinadas". São resumos feitos pela equipe; a matéria completa está no link de cada recorte.</p>
+  <div class="clipwall" id="clipwall"></div>
+  <div class="sources" id="sources"></div>
+</section>
+
+<!-- ## 06. PROTÓTIPO: apresenta materiais e etapas do experimento físico -->
+<section id="prototipo">
+  <div class="sec-h"><span>//</span><h2>O experimento existe</h2></div>
+  <div class="protogrid">
+    <div>
+      <p class="lead">O protótipo transforma o conceito em objeto. O cilindro representa o biorreator, o núcleo representa a atividade do sistema e os componentes eletrônicos permitem transformar o experimento em uma experiência interativa.</p>
+      <div class="chips"><span>Tubo de acrílico</span><span>MDF</span><span>Arduino</span><span>Impressão 3D</span><span>Materiais simples</span></div>
+      <p>Estética inspirada em <b style="color:var(--neon)">Kryptonita</b>: base semelhante a pedra irregular, fragmentos de cristal verde luminoso e estrutura transparente — o mesmo mineral fictício que, no imaginário do Superman, mostra que até a fonte de um super-poder pode ter um lado perigoso.</p>
+    </div>
+    <div class="kryptowrap"><div id="krypto"></div><small>NÚCLEO · CRISTAL KRYPTONITA</small></div>
+  </div>
+  <div class="gal">
+    <figure><small>Registro 01</small><svg viewBox="0 0 24 24"><path d="M4 8h3l2-2h6l2 2h3v11H4z"/><circle cx="12" cy="13" r="3.2"/></svg><figcaption>Foto do protótipo</figcaption></figure>
+    <figure><small>Registro 02</small><svg viewBox="0 0 24 24"><path d="M4 8h3l2-2h6l2 2h3v11H4z"/><circle cx="12" cy="13" r="3.2"/></svg><figcaption>Base e núcleo</figcaption></figure>
+    <figure><small>Registro 03</small><svg viewBox="0 0 24 24"><path d="M4 8h3l2-2h6l2 2h3v11H4z"/><circle cx="12" cy="13" r="3.2"/></svg><figcaption>Cilindro e tampa</figcaption></figure>
+    <figure><small>Registro 04</small><svg viewBox="0 0 24 24"><path d="M4 8h3l2-2h6l2 2h3v11H4z"/><circle cx="12" cy="13" r="3.2"/></svg><figcaption>Eletrônica</figcaption></figure>
+  </div>
+  <h3 style="font-size:1.1rem">Protocolo BIOPULSE</h3>
+  <div class="proto" id="proto"><div>OBSERVAR</div><div>ANALISAR</div><div>DECIDIR</div><div>INTERVIR</div><div>RECUPERAR</div></div>
+</section>
+<div class="codeband"></div>
+
+<!-- ## 07. SOBRE: contextualiza a equipe, o objetivo e a matéria fictícia -->
+<section id="sobre">
+  <div class="sec-h"><span>//</span><h2>Sobre o projeto</h2></div>
+  <div class="panel"><p style="margin:0 0 8px"><b style="color:var(--neon)">BIOPULSE</b> é uma experiência criada para explorar a relação entre ciência + tecnologia + decisões ambientais.</p><p style="margin:0">Projeto <b>Aqua Vita</b> · FIAP SCHOOL · Future Fest.<br>Objetivo pedagógico: mostrar que tecnologias ambientais podem ajudar a resolver problemas, mas suas consequências dependem de como são utilizadas.</p></div>
+
+  <div class="clip rv e1 p1" style="--r:-1.4deg">
+    <span class="tape t1"></span><span class="tape t2"></span>
+    <article class="paper">
+      <div class="newshead"><b>The Daily Planet</b><small>Environmental Report · Ficção</small></div>
+      <h4>Sistema BIOPULSE é testado</h4>
+      <p>Uma nova tecnologia baseada em algas explora abordagens alternativas para a recuperação de rios poluídos. Segundo a equipe responsável, o protótipo já demonstra resultados visíveis em laboratório — mas especialistas independentes alertam que toda solução acelerada carrega uma pergunta ainda sem resposta definitiva: a que custo?</p>
+      <small class="newsfoot">Matéria fictícia, escrita para o projeto BIOPULSE · Aqua Vita · Future Fest.</small>
+    </article>
+  </div>
+</section>
+<!-- ## 08. CONQUISTAS: regras de premiação e placar dos participantes -->
+<section id="conquistas">
+  <div class="sec-h"><span>04</span><h2>Prêmios &amp; placar</h2></div>
+  <p class="lead">O brinde depende da sua pontuação final — e jogar com a VilãoIA ligada conta como bônus, porque é mais difícil. Quanto mais alto na escada abaixo, melhor o prêmio.</p>
+  <div class="prizeladder" id="prizegrid"></div>
+  <div class="boardwrap">
+    <div class="sec-h" style="margin:36px 0 18px"><span>//</span><h2>Placar</h2></div>
+    <table class="board" id="board"><thead><tr><th>#</th><th>Nome</th><th>Pontuação</th><th>Modo</th><th>Prêmio</th></tr></thead><tbody id="boardBody"></tbody></table>
+    <p id="boardEmpty" class="boardEmpty" hidden>Ninguém pontuou ainda — jogue o BioPulse ou a Simulação e salve seu nome.</p>
+  </div>
+</section>
+<div class="codeband"></div>
+</main>
+<!-- ## RODAPÉ: mensagem final da experiência -->
+<footer>O planeta está no limite. O reator está ativo. A próxima decisão é sua.<br>BIOPULSE · Aqua Vita · FIAP SCHOOL · Future Fest</footer>
+
+<!-- ## JAVASCRIPT 01: jogo 2D BioPulse (canvas + áudio + pontuação) -->
+<script src="js/biopulse-game.js"></script>
+<!-- ## JAVASCRIPT 02: interface do site, reatores, simulação e efeitos -->
+<script src="js/core.js"></script>
+<script src="js/reator.js"></script>
+<script src="js/estado.js"></script>
+<script src="js/simulacao.js"></script>
+<script src="js/cenarios.js"></script>
+<script src="js/placar.js"></script>
+<script src="js/recortes.js"></script>
+<script src="js/efeitos.js"></script>
+</body>
+</html>
