@@ -3,24 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>BIOPULSE · Aqua Vita · Future Fest</title>
-<meta name="description" content="BIOPULSE — protótipo e experiência interativa do grupo Aqua Vita sobre algas, poluição e as consequências de soluções ambientais aceleradas. Projeto do Future Fest, FIAP SCHOOL.">
+<title>BIOFILITA · Aqua Vita · Future Fest</title>
+<meta name="description" content="BIOFILITA — protótipo e experiência interativa do grupo Aqua Vita sobre algas, poluição e as consequências de soluções ambientais aceleradas. Projeto do Future Fest, INT School.">
 <meta name="theme-color" content="#070b09">
-<meta property="og:title" content="BIOPULSE · Aqua Vita">
+<meta property="og:title" content="BIOFILITA · Aqua Vita">
 <meta property="og:description" content="Um biorreator, uma IA e uma decisão: o que acontece quando a tecnologia ambiental anda mais rápido que o equilíbrio do planeta.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23070b09'/%3E%3Ccircle cx='50' cy='58' r='16' fill='%234ce88a'/%3E%3Cpath d='M50 20v24M36 40q14-10 28 0' stroke='%234ce88a' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-p="ok">
-<div class="top-progress" aria-hidden="true"></div>
-<div class="boot-sequence" id="boot" aria-hidden="true"><div class="boot-card"><small>Inicializando sistema de bio-resposta</small><b>BIOPULSE / 01</b><div class="boot-line"><i></i></div><small style="margin-top:12px">Conectando reator · IA · ecossistema</small></div></div>
-<aside class="mission-dock" aria-hidden="true"><span>MISSÃO · EQUILÍBRIO</span><i></i></aside>
-<!-- ## MARCA D'ÁGUA: crédito visual permanente da equipe responsável pelo projeto. -->
-<aside class="team-watermark" aria-label="Créditos da equipe Aqua Vita"><b>Aqua Vita · Grupo criador</b><span>Davi Rodrigues · Lucas Gois · Pedro Mony · Felipe de Moraes</span><span>Kauan Matos · Enzo Zezze · Matheus Ortenzi</span></aside>
 <canvas id="fx"></canvas><div id="wipe"></div><div id="toast" role="status"></div>
 <div id="crt" aria-hidden="true"><div class="crt-roll"></div></div>
 <div id="alert"><div class="drip"></div><h2>INTERVENÇÃO DETECTADA</h2></div>
@@ -30,21 +25,18 @@
   <div class="anntext">Apresentação ao vivo · Future Fest <span class="adot">•</span> <a href="#prototipo">Ver o protótipo <i>↗</i></a></div>
   <div class="acode" aria-hidden="true"><span id="acR"></span></div>
 </div>
-<!-- ## ESTRUTURA HTML: cabeçalho fixo com a marca e atalhos de navegação -->
 <header>
-  <div><h1>BIOPULSE</h1><small>Aqua Vita · Future Fest · FIAP SCHOOL</small></div>
+  <div><h1>BIOFILITA</h1><small>Aqua Vita · Future Fest · INT School</small></div>
   <nav><button class="btn nb" data-t="ia"><i>01</i>IA</button><button class="btn nb" data-t="jogo"><i>02</i>JOGO</button><button class="btn nb" data-t="design"><i>03</i>DESIGN</button><button class="btn nb" data-t="conquistas"><i>04</i>CONQUISTAS</button></nav>
 </header>
 
-<!-- ## CONTEÚDO PRINCIPAL: cada seção abaixo explica uma parte da narrativa -->
 <main>
-<!-- ## 01. HERO: apresenta o desafio e dá acesso ao reator -->
 <section id="hero">
   <div class="herogrid">
     <div class="herocopy">
-      <span class="kicker">// Aqua Vita · Future Fest · FIAP SCHOOL</span>
+      <span class="kicker">// Aqua Vita · Future Fest · INT School</span>
       <h1 class="claim">Um biorreator, uma IA<br>e uma decisão.</h1>
-      <p class="lede">BIOPULSE simula o que acontece quando a tecnologia ambiental anda mais rápido do que o equilíbrio que ela promete proteger. Ligue o reator para começar.</p>
+      <p class="lede">BIOFILITA simula o que acontece quando a tecnologia ambiental anda mais rápido do que o equilíbrio que ela promete proteger. Ligue o reator para começar.</p>
       <button class="btn big" id="power">LIGAR O REATOR</button>
       <div class="readout">
         <div><small>Observação</small><b id="nB">SEM LEITURA</b></div>
@@ -63,7 +55,6 @@
 </section>
 <div class="codeband"></div>
 
-<!-- ## 02. IA: explica o dilema ambiental e o documento fictício LexCorp -->
 <section id="ia">
   <div class="sec-h"><span>01</span><h2>IA // Futuro</h2></div>
   <p class="lead rv">“Algas não são apenas organismos. Elas podem funcionar como pequenas fábricas biológicas, produzindo oxigênio e participando da captura de carbono. O problema começa quando a velocidade da solução passa a ser mais importante que o equilíbrio do sistema.”</p>
@@ -81,13 +72,12 @@
     <div class="lexbody" id="lexBody" hidden>
       <p><i>[CLASSIFICAÇÃO: NÍVEL 3 — ACESSO LIBERADO]</i></p>
       <p>A LexCorp financia soluções de recuperação ambiental em escala industrial. Documentos internos sugerem que o programa de "super-algas" foi acelerado antes da conclusão dos testes de impacto — priorizando resultado visível sobre segurança do ecossistema.</p>
-      <p>BIOPULSE nasceu dessa pergunta: até onde a tecnologia deve ir para resolver um problema ambiental — e quem decide onde está esse limite?</p>
-      <p class="lexfoot">Documento fictício, parte da narrativa do projeto BIOPULSE. Qualquer semelhança com universos de ficção é intencional e com fins pedagógicos.</p>
+      <p>BIOFILITA nasceu dessa pergunta: até onde a tecnologia deve ir para resolver um problema ambiental — e quem decide onde está esse limite?</p>
+      <p class="lexfoot">Documento fictício, parte da narrativa do projeto BIOFILITA. Qualquer semelhança com universos de ficção é intencional e com fins pedagógicos.</p>
     </div>
   </div>
 </section>
 
-<!-- ## 03. JOGO: contém o game BioPulse e a simulação de decisões -->
 <section id="jogo">
   <div class="sec-h"><span>02</span><h2>Jogo Biofilito</h2></div>
   <div class="gtabs"><button class="btn on" data-g="bp">BioPulse · Jogo</button><button class="btn" data-g="sim">Simulação · VilãoIA</button></div>
@@ -98,9 +88,9 @@
   <div id="bp" class="game">
     <div class="frame" id="bpmount"></div>
     <div class="bpbar"><small>Clique no jogo · A/D ou setas: socos · W: golpe para cima · S: bolha · P: pausa · M: som</small><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn switch" id="bpvil" title="Liga a tecnologia sem ética: resultado rápido, consequência ignorada" aria-pressed="false">VILÃOIA // OFF</button><button class="btn" id="bpfs">TELA CHEIA</button></div></div>
-    <div class="scorebox" id="bpScore" hidden><p id="bpScoreMsg"></p><div class="scorerow"><input id="bpName" maxlength="18" placeholder="Seu nome" autocomplete="off"><button class="btn" id="bpSaveScore">Salvar pontuação</button></div><small id="bpSaveMsg"></small></div>
+    <div class="scorebox" id="bpScore" hidden><p id="bpScoreMsg"></p><div class="scorerow"><input id="bpName" maxlength="18" placeholder="Seu nome" autocomplete="off" autocapitalize="words" enterkeyhint="done"><button class="btn" id="bpSaveScore">Salvar pontuação</button></div><small id="bpSaveMsg"></small></div>
   </div>
-  <!-- Simulação do site. Use BIOPULSE.setPlanet('ok'|'risk'|'bad') para o reator reagir. -->
+  <!-- Simulação do site. Use BIOFILITA.setPlanet('ok'|'risk'|'bad') para o reator reagir. -->
   <div id="game-mount" class="game" hidden>
     <div class="gtop"><button class="btn switch" id="vil" title="Liga a tecnologia sem ética: resultado rápido, consequência ignorada" aria-pressed="false">VILÃOIA // OFF</button><small id="turn">EVENTO 01/06</small></div>
     <div class="ggrid">
@@ -123,12 +113,11 @@
     </div>
     <div class="vmsg" id="vmsg" hidden></div>
     <div class="log" id="log"></div>
-    <div class="end" id="end" hidden><h3 id="eT"></h3><p id="eM"></p><div class="scorerow"><input id="simName" maxlength="18" placeholder="Seu nome" autocomplete="off"><button class="btn" id="simSaveScore">Salvar pontuação</button></div><small id="simSaveMsg"></small><div><button class="btn big" id="retry">TENTAR NOVAMENTE</button></div></div>
+    <div class="end" id="end" hidden><h3 id="eT"></h3><p id="eM"></p><div class="scorerow"><input id="simName" maxlength="18" placeholder="Seu nome" autocomplete="off" autocapitalize="words" enterkeyhint="done"><button class="btn" id="simSaveScore">Salvar pontuação</button></div><small id="simSaveMsg"></small><div><button class="btn big" id="retry">TENTAR NOVAMENTE</button></div></div>
   </div>
 </section>
 <div class="codeband rev"></div>
 
-<!-- ## 04. COMPARATIVO: contrapõe super-algas e algas nativas -->
 <section id="design">
   <div class="sec-h"><span>03</span><h2>A diferença</h2></div>
   <div class="duo">
@@ -144,12 +133,11 @@
     <div class="panel"><b>ALGA NATIVA</b><p>Crescimento gradual → resultado mais lento → maior possibilidade de equilíbrio sustentável.</p></div>
   </div>
   <p class="note2">A “super-alga” é uma metáfora/hipótese narrativa do projeto para representar uma solução tecnológica acelerada e potencialmente perigosa. Não é apresentada como fato científico.</p>
-  <div class="envs"><div><div id="eA"></div><h3 style="color:var(--warn)">CENÁRIO A · INVASÃO</h3><small>Proliferação descontrolada, água alterada</small></div><div><div id="eB"></div><h3 style="color:var(--neon)">CENÁRIO B · CONVIVÊNCIA</h3><small>Algas nativas ajudando na recuperação</small></div></div>
+  <div class="envs"><div><div id="eA"><img class="envph" src="img/rio-poluido.jpg" width="575" height="288" loading="lazy" alt="Rio poluído, com lixo plástico flutuando na superfície"></div><h3 style="color:var(--warn)">CENÁRIO A · INVASÃO</h3><small>Proliferação descontrolada, água alterada</small></div><div><div id="eB"><img class="envph" src="img/rio-limpo.jpg" width="501" height="307" loading="lazy" alt="Rio limpo, com água transparente e vegetação nas margens"></div><h3 style="color:var(--neon)">CENÁRIO B · CONVIVÊNCIA</h3><small>Algas nativas ajudando na recuperação</small></div></div>
 </section>
 
 <div class="codeband rev"></div>
 
-<!-- ## 05. RECORTES: fontes reais que sustentam a proposta pedagógica -->
 <section id="recortes">
   <div class="sec-h"><span>//</span><h2>Recortes reais</h2></div>
   <p class="lead rv">Notícias e estudos de verdade que sustentam as ideias do projeto — do rio sujo de plástico à pergunta sobre algas "turbinadas". São resumos feitos pela equipe; a matéria completa está no link de cada recorte.</p>
@@ -157,7 +145,6 @@
   <div class="sources" id="sources"></div>
 </section>
 
-<!-- ## 06. PROTÓTIPO: apresenta materiais e etapas do experimento físico -->
 <section id="prototipo">
   <div class="sec-h"><span>//</span><h2>O experimento existe</h2></div>
   <div class="protogrid">
@@ -174,45 +161,76 @@
     <figure><small>Registro 03</small><svg viewBox="0 0 24 24"><path d="M4 8h3l2-2h6l2 2h3v11H4z"/><circle cx="12" cy="13" r="3.2"/></svg><figcaption>Cilindro e tampa</figcaption></figure>
     <figure><small>Registro 04</small><svg viewBox="0 0 24 24"><path d="M4 8h3l2-2h6l2 2h3v11H4z"/><circle cx="12" cy="13" r="3.2"/></svg><figcaption>Eletrônica</figcaption></figure>
   </div>
-  <h3 style="font-size:1.1rem">Protocolo BIOPULSE</h3>
+  <h3 style="font-size:1.1rem">Protocolo BIOFILITA</h3>
   <div class="proto" id="proto"><div>OBSERVAR</div><div>ANALISAR</div><div>DECIDIR</div><div>INTERVIR</div><div>RECUPERAR</div></div>
 </section>
 <div class="codeband"></div>
 
-<!-- ## 07. SOBRE: contextualiza a equipe, o objetivo e a matéria fictícia -->
 <section id="sobre">
   <div class="sec-h"><span>//</span><h2>Sobre o projeto</h2></div>
-  <div class="panel"><p style="margin:0 0 8px"><b style="color:var(--neon)">BIOPULSE</b> é uma experiência criada para explorar a relação entre ciência + tecnologia + decisões ambientais.</p><p style="margin:0">Projeto <b>Aqua Vita</b> · FIAP SCHOOL · Future Fest.<br>Objetivo pedagógico: mostrar que tecnologias ambientais podem ajudar a resolver problemas, mas suas consequências dependem de como são utilizadas.</p></div>
+  <div class="panel"><p style="margin:0 0 8px"><b style="color:var(--neon)">BIOFILITA</b> é uma experiência criada para explorar a relação entre ciência + tecnologia + decisões ambientais.</p><p style="margin:0">Projeto <b>Aqua Vita</b> · INT School · Future Fest.<br>Objetivo pedagógico: mostrar que tecnologias ambientais podem ajudar a resolver problemas, mas suas consequências dependem de como são utilizadas.</p></div>
 
   <div class="clip rv e1 p1" style="--r:-1.4deg">
     <span class="tape t1"></span><span class="tape t2"></span>
     <article class="paper">
       <div class="newshead"><b>The Daily Planet</b><small>Environmental Report · Ficção</small></div>
-      <h4>Sistema BIOPULSE é testado</h4>
+      <h4>Sistema BIOFILITA é testado</h4>
       <p>Uma nova tecnologia baseada em algas explora abordagens alternativas para a recuperação de rios poluídos. Segundo a equipe responsável, o protótipo já demonstra resultados visíveis em laboratório — mas especialistas independentes alertam que toda solução acelerada carrega uma pergunta ainda sem resposta definitiva: a que custo?</p>
-      <small class="newsfoot">Matéria fictícia, escrita para o projeto BIOPULSE · Aqua Vita · Future Fest.</small>
+      <small class="newsfoot">Matéria fictícia, escrita para o projeto BIOFILITA · Aqua Vita · Future Fest.</small>
     </article>
   </div>
 </section>
-<!-- ## 08. CONQUISTAS: regras de premiação e placar dos participantes -->
 <section id="conquistas">
-  <div class="sec-h"><span>04</span><h2>Prêmios &amp; placar</h2></div>
-  <p class="lead">O brinde depende da sua pontuação final — e jogar com a VilãoIA ligada conta como bônus, porque é mais difícil. Quanto mais alto na escada abaixo, melhor o prêmio.</p>
-  <div class="prizeladder" id="prizegrid"></div>
+  <div class="sec-h"><span>04</span><h2>Conquistas &amp; placar</h2></div>
+  <p class="lead">Jogue, decida, investigue e leia para desbloquear todas as conquistas. Cada partida pode ser salva no placar uma única vez.</p>
+  <div class="achhead"><small id="achCount"></small><button class="btn" id="achReset">Zerar conquistas</button></div>
+  <div class="achgrid" id="achgrid"></div>
   <div class="boardwrap">
     <div class="sec-h" style="margin:36px 0 18px"><span>//</span><h2>Placar</h2></div>
-    <table class="board" id="board"><thead><tr><th>#</th><th>Nome</th><th>Pontuação</th><th>Modo</th><th>Prêmio</th></tr></thead><tbody id="boardBody"></tbody></table>
+    <div class="tablescroll"><table class="board" id="board"><thead><tr><th>#</th><th>Nome</th><th>Pontuação</th><th>Modo</th></tr></thead><tbody id="boardBody"></tbody></table></div>
     <p id="boardEmpty" class="boardEmpty" hidden>Ninguém pontuou ainda — jogue o BioPulse ou a Simulação e salve seu nome.</p>
   </div>
 </section>
 <div class="codeband"></div>
 </main>
-<!-- ## RODAPÉ: mensagem final da experiência -->
-<footer>O planeta está no limite. O reator está ativo. A próxima decisão é sua.<br>BIOPULSE · Aqua Vita · FIAP SCHOOL · Future Fest</footer>
+<footer>O planeta está no limite. O reator está ativo. A próxima decisão é sua.<br>BIOFILITA · Aqua Vita · INT School · Future Fest<br><button class="admlink" id="admOpen" type="button">ADM</button></footer>
+<div id="adm" class="admov" hidden role="dialog" aria-modal="true" aria-label="Painel de administração">
+  <div class="admbox">
+    <div class="admtop"><b>PAINEL ADM</b><button class="btn" id="admClose" type="button">Fechar ✕</button></div>
+    <div id="admLogin"><label for="admPass">Senha</label><input id="admPass" type="password" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" enterkeyhint="go"><button class="btn" id="admEnter" type="button">Entrar</button><p id="admErr" class="admerr" hidden>Senha incorreta.</p></div>
+    <div id="admPanel" hidden>
+      <div class="admstats"><div><small>Pontuações</small><b id="admN">0</b></div><div><small>Melhor</small><b id="admBest">–</b></div><div><small>Conquistas</small><b id="admA">0</b></div></div>
+      <h4>Placar</h4>
+      <div class="tablescroll"><table><thead><tr><th>#</th><th>Nome</th><th>Pts</th><th>Modo</th><th></th></tr></thead><tbody id="admBody"></tbody></table></div>
+      <p id="admEmpty" class="boardEmpty" hidden>Placar vazio.</p>
+      <p id="admMsg" class="admok" hidden></p>
+      <button class="btn" id="admUndo" type="button" hidden>↶ Desfazer última alteração</button>
+      <div id="admAdd" class="admadd"><input id="admAddName" placeholder="Nome" maxlength="18" autocomplete="off"><input id="admAddScore" type="number" inputmode="numeric" min="0" max="999" placeholder="Pts"><select id="admAddMode"><option>BioPulse</option><option>Simulação</option></select><button class="btn" id="admAddBtn" type="button">Adicionar</button><p id="admAddErr" class="admerr" hidden>Digite uma pontuação (0 a 999).</p></div>
+      <div class="admact">
+        <button class="btn warn" id="admClear" type="button">Limpar placar</button>
+        <button class="btn" id="admCsv" type="button">Baixar placar (CSV)</button>
+        <button class="btn" id="admUnlock" type="button">Liberar todas as conquistas</button>
+        <button class="btn warn" id="admAchReset" type="button">Zerar conquistas</button>
+        <button class="btn" id="admOut" type="button">Sair do ADM</button>
+      </div>
+      <h4>Se der erro na apresentação</h4>
+      <div class="admadd"><select id="admVicChar" aria-label="Personagem"><option value="gois">Gois</option><option value="matheus">Matheus</option><option value="kauan">Kauan</option><option value="felipe">Felipe</option><option value="pedro">Pedro</option><option value="davi">Davi</option><option value="boy">Zezze</option><option value="capy">Capivara</option><option value="hero">Guardião</option><option value="heroina">Heroína</option></select><button class="btn" id="admVic" type="button">▶ Ver animação de vitória</button><button class="btn" id="admPoses" type="button">▶ Ver esquiva, dano e derrota</button></div>
+      <div class="admact">
+        <button class="btn" id="admFixBp" type="button">Reiniciar BioPulse</button>
+        <button class="btn" id="admFixSim" type="button">Reiniciar Simulação</button>
+        <button class="btn" id="admFixVil" type="button">Desligar VilãoIA</button>
+        <button class="btn" id="admFixFs" type="button">Sair da tela cheia</button>
+        <button class="btn" id="admTop" type="button">Voltar ao topo</button>
+        <button class="btn warn" id="admReload" type="button">Recarregar a página</button>
+      </div>
+      <p class="admhint">Atalho para abrir o painel: Ctrl + Shift + A</p>
+    </div>
+  </div>
+</div>
 
-<!-- ## JAVASCRIPT 01: jogo 2D BioPulse (canvas + áudio + pontuação) -->
-<script src="js/biopulse-game.js"></script>
-<!-- ## JAVASCRIPT 02: interface do site, reatores, simulação e efeitos -->
-<script src="js/site.js"></script>
+<script src="js/biopulse.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+
 </body>
 </html>
