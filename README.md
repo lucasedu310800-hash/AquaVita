@@ -204,3 +204,6 @@ A esquiva do Gois (tecla S) agora é o "Electric Thunder": ele se agacha inclina
 - Toda esquiva agora também abre uma bolha em volta do personagem, na cor dele (amarela no Gois, dourada no Pedro, rosa no Matheus, verde no Felipe etc.).
 - Na tela do código secreto, se uma foto não existir, não aparece mais o aviso 'Coloque a foto em...': o quadro mostra o personagem em pixel art.
 - Removida da seção do protótipo a galeria de 4 quadros 'Registro 01–04' (espaços para fotos).
+
+## Julião (novo estudante, classe Programador)
+`id: 'juliao'`, `weapon: 'code'`: barba, camiseta azul. Ataque: lança chaves de código `{ }`; pose para cima: notebook aberto. Esquiva: **firewall** (bolha verde com código caindo). Dano: bits verdes. Derrota: notebook com tela azul de erro. Vitória: chuva de código estilo Matrix, ele digita no notebook, a barra compila ("BUILD OK ✔"), e a filha corre e abraça ele ("Papai!") com corações. Fotos: `img/estudantes/juliao.png` e `juliao-pixel.png` (código secreto).

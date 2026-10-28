@@ -84,6 +84,10 @@
         hair: '#2a1a12', hairL: '#4a3224', hairD: '#150c08', skin: '#e6ae88', skinD: '#c48a64', eye: '#3a2415', eyeL: '#7a5232', eyeD: '#1d1008',
         hood: '#1f2a44', hoodL: '#35476e', hoodD: '#111a2c', pants: '#1a1a22', pantsL: '#2b2b36', shoe: '#2c2c34',
         curly: true, bag: '#1c1c24', weapon: 'lettuce', chain: false, blush: false } },
+    { id: 'juliao', group: 'estudantes', name: 'JULIÃO', desc: 'Programador: ataca com código e protege com firewall.', secret: true, photo: 'img/estudantes/juliao.png', art: 'img/estudantes/juliao-pixel.png', look: {
+        hair: '#1a120d', hairL: '#33241a', hairD: '#0a0605', skin: '#d9a27c', skinD: '#b87f5c', eye: '#3a2415', eyeL: '#7a5232', eyeD: '#1d1008',
+        hood: '#2b5db3', hoodL: '#4a7fd6', hoodD: '#1a3d80', pants: '#1a1a22', pantsL: '#2b2b36', shoe: '#2c2c34',
+        short: true, beard: true, weapon: 'code', chain: false, blush: false } },
     { id: 'capy', group: 'herois', name: 'CAPIVARA', desc: 'Calma e forte. Ataca de cabeçada.' },
     { id: 'hero', group: 'herois', name: 'GUARDIÃO', desc: 'O herói da AquaVita, de capa.' },
     { id: 'heroina', group: 'herois', name: 'HEROÍNA', desc: 'A heroína da AquaVita, de capa. Mesmos poderes.' }
@@ -743,7 +747,7 @@
       polLabel: w.pollution <= 35 ? 'controlada' : (w.pollution <= 60 ? 'moderada' : 'crítica'),
       bars: [['Ar', (w.air + 100 - w.carbon) / 2, '#bfe9ff'], ['Água', w.water, AQUA], ['Verde', w.green, LEAF], ['Árvore', w.tree, '#8ff0ff']],
       choices: s.choices.slice(), kills: s.kills, maxCombo: s.maxCombo,
-      char: this.charId, tp: this.charId === 'gois' ? 10.2 : ((this.charId === 'matheus' || this.charId === 'kauan' || this.charId === 'felipe') ? 7.4 : (this.charId === 'boy' ? 7.8 : 6.2)), snd: false
+      char: this.charId, tp: this.charId === 'juliao' ? 8.6 : this.charId === 'gois' ? 10.2 : ((this.charId === 'matheus' || this.charId === 'kauan' || this.charId === 'felipe') ? 7.4 : (this.charId === 'boy' ? 7.8 : 6.2)), snd: false
     };
     this.sfx('good');
     this.setState('result');
@@ -1771,7 +1775,7 @@
 
     var fl = h.hurt > 0 && (((t * 20) | 0) % 2 === 0);
     var id0 = this.charId, fc = h.face || 1;
-    var DSTY = { gois: 'thunder', boy: 'dash', pedro: 'shield', matheus: 'dance', kauan: 'rod', felipe: 'leaf', capy: 'dive', hero: 'cape', heroina: 'cape' };
+    var DSTY = { juliao: 'firewall', gois: 'thunder', boy: 'dash', pedro: 'shield', matheus: 'dance', kauan: 'rod', felipe: 'leaf', capy: 'dive', hero: 'cape', heroina: 'cape' };
     var dprog = h.dodge > 0 ? clamp(1 - h.dodge / 0.42, 0, 1) : 0, hprog = h.hurt > 0 ? clamp(1 - h.hurt / 0.35, 0, 1) : 0;
     var dying = h.down && h.downAt !== undefined, dpe = dying ? clamp((t - h.downAt) / 0.45, 0, 1) : 0; dpe = 1 - Math.pow(1 - dpe, 3);
     var mode = dying ? 'down' : (h.dodge > 0 && !bookDodge ? 'dodge' : (h.hurt > 0 ? 'hurt' : ''));
@@ -1843,7 +1847,7 @@
       }
     }
     if (h.dodge > 0) {                              // bolha em volta, na cor de cada personagem (escudo ativado)
-      var BC = { gois: ['#ffe45a', '#fff7b0'], boy: ['#cfe2ee', '#ffffff'], pedro: ['#ffd34d', '#fff0b0'], matheus: ['#ff7ae0', '#ffd0f4'], kauan: ['#4fa8ff', '#bfe0ff'], felipe: ['#7be063', '#d6ffc4'],
+      var BC = { gois: ['#ffe45a', '#fff7b0'], boy: ['#cfe2ee', '#ffffff'], pedro: ['#ffd34d', '#fff0b0'], juliao: ['#3dff7a', '#b6ffcf'], matheus: ['#ff7ae0', '#ffd0f4'], kauan: ['#4fa8ff', '#bfe0ff'], felipe: ['#7be063', '#d6ffc4'],
                  capy: ['#7fe8ff', '#c8f8ff'], hero: ['#7fe8ff', '#c8f8ff'], heroina: ['#ff9ad0', '#ffd6ec'], davi: ['#b9a0ff', '#e6dcff'] }, bc = BC[this.charId] || ['#7fe8ff', '#c8f8ff'];
       var bp = clamp(1 - h.dodge / 0.42, 0, 1), bx = CX + (this.charId === 'capy' ? 7 : 0), br = (this.charId === 'capy' ? 40 : 34) * Math.min(1, bp * 5 + 0.25) * (1 + 0.04 * Math.sin(t * 30));
       g.globalAlpha = 0.20;
@@ -1864,7 +1868,7 @@
   /* efeitos por personagem: esquiva própria, reação ao dano e derrota */
   Game.prototype.heroFx = function (mode, id, dst, pr, fc, cx, dpe, t) {
     var g = this.ctx, i, a, x, y, a2 = Math.sin(Math.PI * clamp(pr, 0, 1));
-    var PAL = { gois: ['#c0c4cc', '#e0482f'], kauan: ['#ff8a2e', '#e8edf3'], felipe: ['#4fae3f', '#9be37a'], matheus: ['#ff4fd8', '#58d6ff'], pedro: ['#ffd34d', '#ffffff'],
+    var PAL = { gois: ['#c0c4cc', '#e0482f'], kauan: ['#ff8a2e', '#e8edf3'], felipe: ['#4fae3f', '#9be37a'], matheus: ['#ff4fd8', '#58d6ff'], pedro: ['#ffd34d', '#ffffff'], juliao: ['#3dff7a', '#b6ffcf'],
                 davi: ['#f6f0d8', '#ffe9a8'], boy: ['#7fd3ff', '#ffffff'], capy: ['#9ff0ff', '#ffffff'], hero: ['#9ff0ff', '#ffffff'], heroina: ['#ff9ad0', '#ffffff'] };
     var pc = PAL[id] || ['#ffffff', '#ffe9a8'];
     if (mode === 'dodge') {
@@ -1889,6 +1893,9 @@
       } else if (dst === 'roll') {
         for (i = 0; i < 7; i++) { a = (1 - pr) * 0.9; g.globalAlpha = a; this.R(cx - fc * (8 + i * 4) - 2, GY - 3 - ((i * 5) % 7), 3, 3, i % 2 ? '#ffd34d' : '#ff8a2e'); }
         g.globalAlpha = 0.5 * (1 - pr); this.R(cx - fc * 18 - 6, GY - 5, 12, 4, '#d6dbe4'); g.globalAlpha = 1;
+      } else if (dst === 'firewall') {               // firewall: colunas de código verde caindo
+        for (i = 0; i < 9; i++) { var fy4 = (t * 60 + i * 23) % 56; g.globalAlpha = 0.85 * (1 - fy4 / 56); this.R(cx - 28 + i * 7, GY - 56 + fy4, 3, 4, i % 2 ? '#3dff7a' : '#b6ffcf'); this.R(cx - 28 + i * 7, GY - 56 + fy4 - 6, 2, 3, '#1faa4c'); }
+        g.globalAlpha = 0.5; this.R(cx - 30, GY - 30, 60, 1, '#3dff7a'); this.R(cx - 30, GY - 12, 60, 1, '#3dff7a'); g.globalAlpha = 1;
       } else if (dst === 'shield') {
         g.globalAlpha = 0.95; this.disc(cx + fc * 16, GY - 22, 17, '#14181f'); this.disc(cx + fc * 16, GY - 22, 15.5, '#d9a93f'); this.disc(cx + fc * 16, GY - 22, 10, '#b98a2a'); this.disc(cx + fc * 16, GY - 22, 4, '#fff0b0');
         this.R(cx + fc * 8 - 1, GY - 34, 3, 2, '#fff0b0'); g.globalAlpha = 1;
@@ -1932,6 +1939,7 @@
       var hx = id === 'capy' ? cx + fc * 22 : cx - fc * 30, hy2 = id === 'capy' ? GY - 24 : GY - 28;
       for (i = 0; i < 3; i++) { a = t * 4 + i * 2.1; this.R(hx + Math.cos(a) * 11, hy2 - 10 + Math.sin(a) * 3, 3, 3, '#ffe48a'); }    // tontura
       if (id === 'gois') { for (i = 0; i < 4; i++) this.R(cx + fc * (12 + i * 7), GY - 3, 5, 3, ['#e0382f', '#2f7fe0', '#ffd23a', '#c0c4cc'][i]); this.R(cx + fc * 34, GY - 7, 6, 6, '#e8edf3'); }
+      else if (id === 'juliao') { this.R(cx + fc * 12, GY - 4, 16, 3, '#9aa5b5'); this.R(cx + fc * 14, GY - 12, 3, 8, '#2f6fe0'); this.R(cx + fc * 20, GY - 9, 2, 2, '#ffffff'); this.R(cx + fc * 26, GY - 8, 6, 4, '#e0382f'); }
       else if (id === 'kauan') { this.R(cx + fc * 12, GY - 4, 14, 2, '#9a6a36'); this.R(cx + fc * 30, GY - 7, 12, 2, '#9a6a36'); this.R(cx + fc * 18, GY - 12, 11, 5, '#ff8a2e'); this.R(cx + fc * 28, GY - 11, 3, 4, '#e8761a'); }
       else if (id === 'felipe') { this.R(cx + fc * 12, GY - 5, 12, 4, '#7a8a3a'); this.R(cx + fc * 15, GY - 8, 8, 3, '#8a9a46'); this.R(cx + fc * 22, GY - 3, 5, 2, '#6a5a2a'); }
       else if (id === 'matheus') { this.R(cx + fc * 12, GY - 6, 12, 2, '#2a2a33'); this.R(cx + fc * 12, GY - 6, 3, 5, '#ff4fd8'); this.R(cx + fc * 22, GY - 6, 3, 5, '#ff4fd8'); }
@@ -2039,6 +2047,25 @@
         p(12, -33 + by, 15, 13, '#4fae3f'); q(12, -33 + by, 15, 2, '#9be37a'); q(19, -31 + by, 1, 10, '#2f7a2a'); q(15, -28 + by, 2, 2, '#9be37a'); q(22, -26 + by, 2, 2, '#9be37a'); p(10, -30 + by, 2, 6, '#4fae3f'); p(27, -30 + by, 2, 6, '#4fae3f');
         q(30, -34 + by, 2, 2, '#9be37a'); q(31, -22 + by, 2, 2, '#9be37a');
       }
+      else if (o.win && LK.weapon === 'code') {         // braços abertos para abraçar a filha
+        p(4, -21 + by, 10, 3, HOOD); p(13, -22 + by, 3, 4, SKIN); p(-8, -23 + by, 3, 10, HOOD); p(-8, -13 + by, 3, 2, SKIN);
+      }
+      else if (o.build && LK.weapon === 'code') {      // digitando no notebook
+        var ty = Math.sin((o.t || 0) * 16) > 0 ? 1 : 0;
+        p(4, -22 + by, 8, 3, HOOD); p(11, -23 + by + ty, 3, 3, SKIN);
+        p(10, -22 + by, 17, 2, '#9aa5b5'); q(10, -22 + by, 17, 1, '#d3dbe6'); p(24, -35 + by, 3, 13, '#2f3642'); q(25, -33 + by, 1, 3, '#3dff7a'); q(25, -29 + by, 1, 2, '#58d6ff'); q(25, -26 + by, 1, 3, '#3dff7a');
+        q(13, -23 + by, 8, 1, '#6b7587');
+      }
+      else if (o.punch && LK.weapon === 'code') {      // lança uma chave de código { }
+        p(4, -23 + by, 8, 3, HOOD); p(11, -25 + by, 3, 4, SKIN);
+        p(15, -33 + by, 2, 3, '#3dff7a'); p(14, -30 + by, 2, 2, '#3dff7a'); p(15, -28 + by, 2, 2, '#3dff7a'); p(14, -26 + by, 2, 2, '#3dff7a'); p(15, -24 + by, 2, 3, '#3dff7a');
+        p(22, -33 + by, 2, 3, '#58d6ff'); p(23, -30 + by, 2, 2, '#58d6ff'); p(22, -28 + by, 2, 2, '#58d6ff'); p(23, -26 + by, 2, 2, '#58d6ff'); p(22, -24 + by, 2, 3, '#58d6ff');
+        q(18, -28 + by, 3, 1, '#ffffff'); q(30, -30 + by, 2, 1, '#3dff7a'); q(31, -26 + by, 2, 1, '#3dff7a');
+      }
+      else if (o.up && LK.weapon === 'code') {         // notebook aberto para o alto
+        p(5, -39 + by, 3, 16, HOOD); p(4, -42 + by, 5, 3, SKIN);
+        p(-1, -46 + by, 15, 3, '#9aa5b5'); q(-1, -46 + by, 15, 1, '#d3dbe6'); p(-1, -60 + by, 15, 14, '#2f3642'); q(1, -58 + by, 6, 1, '#3dff7a'); q(1, -55 + by, 9, 1, '#58d6ff'); q(1, -52 + by, 5, 1, '#3dff7a'); q(1, -49 + by, 8, 1, '#ffd23a');
+      }
       else if (o.build && LK.weapon === 'tools') {    // apertando parafusos à frente
         var bw = Math.sin((o.t || 0) * 22) > 0 ? 1 : 0;
         p(4, -23 + by, 8, 3, HOOD); p(11, -25 + by, 3, 4, SKIN);
@@ -2110,6 +2137,7 @@
       if (BLUSH) { q(-4, -28 + hy, 2, 1, '#f29a9e'); q(2, -28 + hy, 2, 1, '#f29a9e'); }
       if (GLASSES) { q(-4, -31 + hy, 4, 1, '#14141a'); q(0, -31 + hy, 4, 1, '#14141a'); q(-4, -28 + hy, 4, 1, '#14141a'); q(0, -28 + hy, 4, 1, '#14141a'); q(-4, -30 + hy, 1, 2, '#14141a'); q(3, -30 + hy, 1, 2, '#14141a'); q(-5, -30 + hy, 1, 1, '#14141a'); q(4, -30 + hy, 1, 1, '#14141a'); }                          // bochechas rosadas
       q(0, -28 + hy, 1, 1, SKIND); q(-1, -26 + hy, 2, 1, '#e08f8c');
+      if (LK.beard) { q(-4, -28 + hy, 1, 4, HAIR); q(3, -28 + hy, 1, 4, HAIR); q(-3, -26 + hy, 6, 2, HAIR); q(-2, -27 + hy, 4, 1, HAIR); q(-1, -26 + hy, 2, 1, '#f4eee6'); }   // barba e sorriso
       if (CHAIN) { q(-2, -25 + by, 1, 1, GOLD2); q(-1, -24 + by, 1, 1, GOLD2); q(0, -23 + by, 1, 2, GOLD2); q(1, -24 + by, 1, 1, GOLD2); q(2, -25 + by, 1, 1, GOLD2); }   // corrente dourada
       return;
     }
@@ -3449,6 +3477,38 @@
           g.globalAlpha = 1;
         }
       }
+      if (ch === 'juliao') {                         // chuva de código, compila, e a filha corre para o abraço
+        var cols = 22, gcol;
+        g.save(); g.font = '700 12px monospace'; g.textAlign = 'center';
+        for (gcol = 0; gcol < cols; gcol++) {
+          var cyy = ((t * (50 + (gcol % 5) * 14) + gcol * 53) % 380) - 20;
+          for (k2 = 0; k2 < 6; k2++) { g.globalAlpha = (1 - k2 / 6) * 0.55; g.fillStyle = k2 === 0 ? '#d6ffe4' : '#2fe06a'; g.fillText(((gcol * 7 + k2 + ((t * 6) | 0)) % 3) ? '1' : '0', 14 + gcol * 29, cyy - k2 * 14); }
+        }
+        g.restore(); g.globalAlpha = 1;
+        pose = tsx < 0.5 ? '' : (tsx < 3.4 ? 'build' : (tsx < 3.9 ? '' : 'flex'));
+        if (tsx > 0.5 && tsx < 3.6) {                // barra de compilação
+          var cp2 = clamp((tsx - 0.6) / 2.4, 0, 1); g.fillStyle = '#14181f'; g.fillRect(240, 150, 190, 30); g.fillStyle = '#0b2a14'; g.fillRect(243, 153, 184, 24); g.fillStyle = '#3dff7a'; g.fillRect(243, 153, 184 * cp2, 24);
+          this.txt(cp2 < 1 ? 'compilando… ' + Math.round(cp2 * 100) + '%' : 'BUILD OK ✔', 335, 165, 13, '#ffffff', { outline: 3 });
+        }
+        if (tsx > 3.0) {                             // a filha corre da direita e abraça o pai
+          var gk = clamp((tsx - 3.0) / 1.2, 0, 1), gx2 = 560 + (wx * 2 + 62 * sc - 560) * ease(gk), gb = gk < 1 ? Math.abs(Math.sin(tsx * 16)) * 5 : Math.sin(t * 5) * 2, gu = 4.2, hug = tsx > 4.3;
+          var gp2 = function (x2, y2, w2, h2, c2) { g.fillStyle = c2; g.fillRect(gx2 + x2 * gu, 300 - gb + y2 * gu, w2 * gu, h2 * gu); };
+          g.save(); g.fillStyle = 'rgba(0,0,0,0.25)'; g.fillRect(gx2 - 14 * gu, 297, 28 * gu, 5); g.restore();
+          var lg = gk < 1 && Math.sin(tsx * 16) > 0 ? 1 : 0;
+          gp2(-3, -9, 2, 6 - lg, '#e8a8c0'); gp2(1, -9, 2, 6 - (1 - lg) * (gk < 1 ? 1 : 0), '#e8a8c0'); gp2(-4, -3, 3, 3, '#f2f2f2'); gp2(1, -3, 3, 3, '#f2f2f2');       // pernas e tênis
+          gp2(-5, -18, 10, 9, '#b9bcc4'); gp2(-5, -18, 10, 1, '#d8dbe2'); gp2(-1, -15, 3, 3, '#f4f4f8'); gp2(0, -14, 1, 1, '#ff6a9a'); gp2(-2, -16, 2, 1, '#ff6a9a');            // suéter com o gatinho
+          if (hug) { gp2(-8, -26, 3, 9, '#b9bcc4'); gp2(5, -26, 3, 9, '#b9bcc4'); gp2(-8, -28, 3, 3, '#f0c4a4'); gp2(5, -28, 3, 3, '#f0c4a4'); }
+          else { gp2(-8, -17, 3, 7, '#b9bcc4'); gp2(5, -17, 3, 7, '#b9bcc4'); gp2(-8, -11, 3, 2, '#f0c4a4'); gp2(5, -11, 3, 2, '#f0c4a4'); }
+          gp2(-5, -27, 10, 9, '#f0c4a4'); gp2(-6, -30, 12, 5, '#8a6a4a'); gp2(-6, -27, 2, 4, '#8a6a4a'); gp2(4, -31, 3, 3, '#8a6a4a'); gp2(5, -28, 3, 6, '#8a6a4a');       // rosto, cabelo e rabinho
+          gp2(-3, -23, 2, 2, '#2a1a12'); gp2(1, -23, 2, 2, '#2a1a12'); gp2(-3, -23, 1, 1, '#ffffff'); gp2(1, -23, 1, 1, '#ffffff'); gp2(-4, -20, 2, 1, '#f09a9a'); gp2(2, -20, 2, 1, '#f09a9a'); gp2(-1, -19, 2, 1, '#c86a6a');
+          if (hug) this.txt('Papai!', gx2, 300 - gb - 33 * gu, 14, '#ffd0e4', { outline: 4 });
+        }
+        if (tsx > 4.3) for (i = 0; i < 12; i++) {    // corações subindo
+          age = (t * 0.55 + i * 0.083) % 1; g.globalAlpha = 1 - age; var hx5 = wx * 2 + 40 + ((i * 41) % 110) + Math.sin(age * 6 + i) * 8, hy5 = 250 - age * 150;
+          g.fillStyle = i % 2 ? '#ff6a9a' : '#ff9ac0'; g.fillRect(hx5, hy5, 5, 5); g.fillRect(hx5 + 7, hy5, 5, 5); g.fillRect(hx5 - 1, hy5 + 4, 14, 4); g.fillRect(hx5 + 1, hy5 + 8, 10, 3); g.fillRect(hx5 + 4, hy5 + 11, 4, 3);
+        }
+        g.globalAlpha = 1;
+      }
       if (ch === 'kauan') {                           // lago: pesca de verdade, o peixe morde e ele puxa
         var wt0 = 276, wbx = 318, wby = wt0 + 4, tipx = wx * 2 + 4 * 34 * sc, tipy = 300 - 4 * 39 * sc;
         g.fillStyle = '#1b3f66'; g.fillRect(230, wt0, UW - 230, UH - wt0); g.fillStyle = '#2f7fc0'; g.fillRect(230, wt0, UW - 230, 4);
@@ -3610,7 +3670,7 @@
       this.txt('VITÓRIA', 67, 68, 11, '#ffd34d', { outline: 3 });
       g.globalAlpha = 1;
     }
-    var QU = { felipe: 'Comer bem e desenhar o futuro. Tudo junto!', kauan: 'Hoje o peixe não escapa. A água limpa dá peixe!', matheus: 'Fechou! Deixa o like e a água limpa.', gois: 'Desmontei, montei de novo. Problema resolvido.', pedro: 'A poluição não aguenta um bom solo de tuba!', davi: 'Está tudo escrito: a natureza sempre vence.', boy: 'Nada me para quando eu tenho coragem!', capy: 'Calma e força. É assim que se protege a água.', hero: 'A Árvore Líquida está a salvo.', heroina: 'A água é vida. E eu protejo a água!' };
+    var QU = { juliao: 'Compilou! O melhor código é o amor da minha filha.', felipe: 'Comer bem e desenhar o futuro. Tudo junto!', kauan: 'Hoje o peixe não escapa. A água limpa dá peixe!', matheus: 'Fechou! Deixa o like e a água limpa.', gois: 'Desmontei, montei de novo. Problema resolvido.', pedro: 'A poluição não aguenta um bom solo de tuba!', davi: 'Está tudo escrito: a natureza sempre vence.', boy: 'Nada me para quando eu tenho coragem!', capy: 'Calma e força. É assim que se protege a água.', hero: 'A Árvore Líquida está a salvo.', heroina: 'A água é vida. E eu protejo a água!' };
     var qs = QU[ch] || 'A Árvore Líquida está a salvo.';
     if (t > 1.2 && ga > 0) {                         // legenda digitando na parte de baixo
       var nc = Math.min(qs.length, Math.floor((t - 1.2) * 24));
