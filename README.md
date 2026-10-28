@@ -202,3 +202,5 @@ Em todo lugar onde ela aparece (jogo, menu, seleção, vitória do Pedro e dela 
 ## Gois: esquiva Electric Thunder (estilo Blanka)
 A esquiva do Gois (tecla S) agora é o "Electric Thunder": ele se agacha inclinado, com brilho amarelo, juba de espetos e 12 raios amarelos saindo do corpo. A vitória dele ficou como antes, sem esse efeito.
 - Toda esquiva agora também abre uma bolha em volta do personagem, na cor dele (amarela no Gois, dourada no Pedro, rosa no Matheus, verde no Felipe etc.).
+- Na tela do código secreto, se uma foto não existir, não aparece mais o aviso 'Coloque a foto em...': o quadro mostra o personagem em pixel art.
+- Removida da seção do protótipo a galeria de 4 quadros 'Registro 01–04' (espaços para fotos).

@@ -2507,9 +2507,8 @@
     } else {
       g.fillStyle = '#0b1522';
       g.fillRect(fx, fy, fs, fs);
-      if (S.err) {
-        this.txt('Coloque a foto em', fx + fs / 2, fy + fs / 2 - 14, 13, INK, { outline: 3 });
-        this.txt(CHARS[charIndex(S.char)].photo || ('img/estudantes/' + S.char + '.jpg'), fx + fs / 2, fy + fs / 2 + 6, 13, '#7dff3a', { outline: 3 });
+      if (S.err) {                                    // sem foto: mostra o personagem em pixel art no quadro
+        this.drawPreview(S.char, fx / 2 + fs / 4, (fy + fs - 18) / 2, '', 1.5);
       } else this.txt('carregando…', fx + fs / 2, fy + fs / 2, 13, INK, { outline: 3 });
     }
     g.fillStyle = 'rgba(0,0,0,0.12)';                   // linhas de varredura
